@@ -171,7 +171,7 @@ const Wallet: React.FC<WalletProps> = ({ username, onLogout }) => {
         to: toAddress,
         amount: amountNum,
         timestamp: Date.now(),
-        validates: validatedTxs,
+        validates: validatedTxs, // IDs das transações validadas (conexões do DAG)
         validated: false,
         hash: ''
       };
@@ -289,7 +289,7 @@ const Wallet: React.FC<WalletProps> = ({ username, onLogout }) => {
                     </div>
                   )}
                   <Badge variant="secondary" className="text-xs">
-                    0201N Tokens
+                    0102N Tokens
                   </Badge>
                 </div>
 
@@ -327,7 +327,7 @@ const Wallet: React.FC<WalletProps> = ({ username, onLogout }) => {
                 <CardHeader className="pb-3">
                   <CardTitle className="flex items-center text-base">
                     <Send className="w-4 h-4 mr-2" />
-                    Enviar 0201N
+                    Enviar 0102N
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
@@ -346,7 +346,7 @@ const Wallet: React.FC<WalletProps> = ({ username, onLogout }) => {
                   
                   <div className="space-y-1">
                     <Label htmlFor="amount" className="text-xs font-medium">
-                      Quantidade (0201N)
+                      Quantidade (0102N)
                     </Label>
                     <Input
                       id="amount"
@@ -360,7 +360,7 @@ const Wallet: React.FC<WalletProps> = ({ username, onLogout }) => {
                       className="h-10"
                     />
                     <p className="text-xs text-gray-500">
-                      Máximo: {userInfo.balance.toFixed(2)} 0201N
+                      Máximo: {userInfo.balance.toFixed(2)} 0102N
                     </p>
                   </div>
 
@@ -386,7 +386,7 @@ const Wallet: React.FC<WalletProps> = ({ username, onLogout }) => {
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base">Transações</CardTitle>
                   <CardDescription className="text-xs">
-                    Histórico na rede 0201N Tangle (DAG)
+                    Histórico na rede 0102N Tangle (DAG)
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -409,7 +409,7 @@ const Wallet: React.FC<WalletProps> = ({ username, onLogout }) => {
                             </div>
                             <div className="text-right space-y-1">
                               <div className={`font-bold text-xs ${tx.from === userInfo.address ? 'text-red-600' : 'text-green-600'}`}>
-                                {tx.from === userInfo.address ? '-' : '+'}{tx.amount} 0201N
+                                {tx.from === userInfo.address ? '-' : '+'}{tx.amount} 0102N
                               </div>
                               <Badge variant={tx.validated ? "default" : "secondary"} className="text-xs">
                                 {tx.validated ? 'Validado' : 'Pendente'}
@@ -446,7 +446,7 @@ const Wallet: React.FC<WalletProps> = ({ username, onLogout }) => {
                     Visualização 2D do Tangle
                   </CardTitle>
                   <CardDescription className="text-xs">
-                    Grafo 2D representando transações e validações na rede 0201N
+                    Grafo 2D representando transações e validações na rede 0102N
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="p-2">
@@ -462,7 +462,7 @@ const Wallet: React.FC<WalletProps> = ({ username, onLogout }) => {
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center text-base">
                 <Activity className="w-4 h-4 mr-2" />
-                Rede 0201N Tangle (DAG)
+                Rede 0102N Tangle (DAG)
               </CardTitle>
               <CardDescription className="text-xs">
                 Estatísticas em tempo real

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useMemo } from 'react';
 import * as d3 from 'd3';
 
@@ -41,7 +40,7 @@ const TransactionGraph2D: React.FC<TransactionGraph2DProps> = ({ transactions })
     const nodeMap = new Map<string, GraphNode>();
     const linkArray: GraphLink[] = [];
 
-    // Create transaction nodes first
+    // Criação dos nós de transação
     transactions.forEach((tx, index) => {
       const node: GraphNode = {
         id: tx.id,
@@ -54,7 +53,7 @@ const TransactionGraph2D: React.FC<TransactionGraph2DProps> = ({ transactions })
       nodeMap.set(tx.id, node);
     });
 
-    // Create validation links (this is the key part for Tangle structure)
+    // Criação dos links de validação (lógica central do Tangle/DAG)
     transactions.forEach(tx => {
       tx.validates.forEach(validatedTxId => {
         if (nodeMap.has(validatedTxId)) {
